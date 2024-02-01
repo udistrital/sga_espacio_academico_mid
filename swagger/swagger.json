@@ -1,0 +1,107 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "SGA MID - Espacios Académicos",
+        "description": "Microservicio MID del SGA MID que complementa los espacios academicos",
+        "version": "1.0.0",
+        "contact": {}
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/espacios-academicos/hijos": {
+            "post": {
+                "tags": [
+                    "espacios-academicos"
+                ],
+                "description": "post EspaciosAcademicos for Plan Estudios",
+                "operationId": "EspaciosAcademicosController.PostAcademicSpacesBySon",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body crear espacio academico content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/{}"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{}"
+                    },
+                    "403": {
+                        "description": ":body is empty"
+                    }
+                }
+            }
+        },
+        "/espacios-academicos/hijos/asignar-periodo": {
+            "put": {
+                "tags": [
+                    "espacios-academicos"
+                ],
+                "description": "Asigna el periodo a los grupos/espacios académicos indicados",
+                "operationId": "EspaciosAcademicosController.PutAcademicSpaceAssignPeriod",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Asignar periodo a los espacios académicos",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/{}"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{}"
+                    },
+                    "400": {
+                        "description": "the request contains incorrect syntaxis"
+                    }
+                }
+            }
+        },
+        "/espacios-academicos/proyectos/{proyecto_id}": {
+            "get": {
+                "tags": [
+                    "espacios-academicos"
+                ],
+                "description": "get Espacios_academicos for Plan Estudios",
+                "operationId": "EspaciosAcademicosController.GetAcademicSpacesByProject",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id_proyecto",
+                        "description": "Id del proyecto",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{}"
+                    },
+                    "404": {
+                        "description": "not found resource"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "{}": {
+            "title": "{}",
+            "type": "object"
+        }
+    },
+    "tags": [
+        {
+            "name": "espacios-academicos",
+            "description": "EspaciosAcademicosController operations for Espacios_academicos\n"
+        }
+    ]
+}
