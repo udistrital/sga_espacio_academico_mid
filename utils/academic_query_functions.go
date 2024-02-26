@@ -7,7 +7,7 @@ package utils
 import (
 	"fmt"
 	"github.com/astaxie/beego"
-	"github.com/udistrital/sga_mid_espacios_academicos/helpers"
+	"github.com/udistrital/sga_espacio_academico_mid/helpers"
 	"github.com/udistrital/utils_oas/request"
 )
 

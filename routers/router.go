@@ -4,7 +4,7 @@
 package routers
 
 import (
-	"github.com/udistrital/sga_mid_espacios_academicos/controllers"
+	"github.com/udistrital/sga_espacio_academico_mid/controllers"
 
 	"github.com/astaxie/beego"
 )
