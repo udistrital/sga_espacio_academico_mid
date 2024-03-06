@@ -10,6 +10,7 @@ API MID intermediaria entre el cliente SGA y la API de espacios académicos con 
 * [Docker](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker Compose](https://docs.docker.com/compose/)
 
+
 ### Variables de Entorno
 ```shell
 SGA_ESPACIO_ACADEMICO_MID_HTTP_PORT: [Puerto de ejecución API]
