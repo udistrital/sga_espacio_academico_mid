@@ -7,7 +7,7 @@ import (
 
 func init() {
 
-    beego.GlobalControllerRouter["sga_espacio_academico_mid/controllers:EspaciosAcademicosController"] = append(beego.GlobalControllerRouter["sga_espacio_academico_mid/controllers:EspaciosAcademicosController"],
+    beego.GlobalControllerRouter["github.com/udistrital/sga_espacio_academico_mid/controllers:EspaciosAcademicosController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sga_espacio_academico_mid/controllers:EspaciosAcademicosController"],
         beego.ControllerComments{
             Method: "PostAcademicSpacesBySon",
             Router: "/hijos",
@@ -16,7 +16,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["sga_espacio_academico_mid/controllers:EspaciosAcademicosController"] = append(beego.GlobalControllerRouter["sga_espacio_academico_mid/controllers:EspaciosAcademicosController"],
+    beego.GlobalControllerRouter["github.com/udistrital/sga_espacio_academico_mid/controllers:EspaciosAcademicosController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sga_espacio_academico_mid/controllers:EspaciosAcademicosController"],
         beego.ControllerComments{
             Method: "PutAcademicSpaceAssignPeriod",
             Router: "/hijos/asignar-periodo",
@@ -25,7 +25,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["sga_espacio_academico_mid/controllers:EspaciosAcademicosController"] = append(beego.GlobalControllerRouter["sga_espacio_academico_mid/controllers:EspaciosAcademicosController"],
+    beego.GlobalControllerRouter["github.com/udistrital/sga_espacio_academico_mid/controllers:EspaciosAcademicosController"] = append(beego.GlobalControllerRouter["github.com/udistrital/sga_espacio_academico_mid/controllers:EspaciosAcademicosController"],
         beego.ControllerComments{
             Method: "GetAcademicSpacesByProject",
             Router: "/proyectos/:proyecto_id",
