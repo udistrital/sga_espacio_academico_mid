@@ -65,19 +65,21 @@ func GetAcademicSpacesByProject(idProyecto int64) requestresponse.APIResponse {
 	for _, espacio := range Espacios_academicos_1["Data"].([]interface{}) {
 		var nombresEspacios []map[string]interface{}
 		var nombresEspaciosStr string = ""
-		for _, requerido := range espacio.(map[string]interface{})["espacios_requeridos"].([]interface{}) {
-			nombreEspacio, err := getLocalEspacioAcademico(requerido.(string), Espacios_academicos_1["Data"].([]interface{}))
-			if err != nil {
-				nombreEspacio, err = getLineaEspacioAcademico(requerido.(string))
+		if reflect.TypeOf(espacio.(map[string]interface{})["espacios_requeridos"]).Kind() == reflect.Slice {
+			for _, requerido := range espacio.(map[string]interface{})["espacios_requeridos"].([]interface{}) {
+				nombreEspacio, err := getLocalEspacioAcademico(requerido.(string), Espacios_academicos_1["Data"].([]interface{}))
 				if err != nil {
-					nombreEspacio = "No encontrado..."
+					nombreEspacio, err = getLineaEspacioAcademico(requerido.(string))
+					if err != nil {
+						nombreEspacio = "No encontrado..."
+					}
 				}
+				nombresEspacios = append(nombresEspacios, map[string]interface{}{
+					"_id":    requerido.(string),
+					"nombre": nombreEspacio,
+				})
+				nombresEspaciosStr += nombreEspacio + ", "
 			}
-			nombresEspacios = append(nombresEspacios, map[string]interface{}{
-				"_id":    requerido.(string),
-				"nombre": nombreEspacio,
-			})
-			nombresEspaciosStr += nombreEspacio + ", "
 		}
 		nombreClase, err := getClase(espacio.(map[string]interface{})["clasificacion_espacio_id"].(float64), clases)
 		if err != nil {
