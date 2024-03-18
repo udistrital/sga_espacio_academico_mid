@@ -24,7 +24,7 @@ func (c *EspaciosAcademicosController) URLMapping() {
 // GetAcademicSpacesByProject ...
 // @Title GetAcademicSpacesByProject
 // @Description get Espacios_academicos for Plan Estudios
-// @Param	id_proyecto		path	int	true	"Id del proyecto"
+// @Param	proyecto_id		path	int	true	"Id del proyecto"
 // @Success 200 {}
 // @Failure 404 not found resource
 // @router /proyectos/:proyecto_id [get]
